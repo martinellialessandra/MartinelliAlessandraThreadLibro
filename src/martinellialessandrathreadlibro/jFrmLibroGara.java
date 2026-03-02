@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
  *
  * @author martinelli.alessandr
  */
+
 /**
  * all'inizio definisco una classe jFrmLibroGara che viene estesa a javax.swing.JFrame (creo la GUI)
  * (Pausa)Serve per mettere in pausa tutti i thread (All'inizio sono tutti attivi)
@@ -18,6 +19,7 @@ import javax.swing.JOptionPane;
  * @author martinelli.alessandr
  */
 public class jFrmLibroGara extends javax.swing.JFrame  {
+    private GestioneVincitore g=new GestioneVincitore();
     private boolean Pausa = false;
     private ArrayList<ProgressBar> listaThread = new ArrayList<>();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jFrmLibroGara.class.getName());
@@ -87,6 +89,9 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
         btnPausa = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
         pgb1 = new javax.swing.JProgressBar();
+        lbl_Pos1 = new javax.swing.JLabel();
+        lbl_Pos2 = new javax.swing.JLabel();
+        lbl_Pos3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("gara");
@@ -157,6 +162,18 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
         getContentPane().add(pgb1);
         pgb1.setBounds(157, 31, 570, 55);
 
+        lbl_Pos1.setText("jLabel1");
+        getContentPane().add(lbl_Pos1);
+        lbl_Pos1.setBounds(740, 50, 37, 16);
+
+        lbl_Pos2.setText("jLabel2");
+        getContentPane().add(lbl_Pos2);
+        lbl_Pos2.setBounds(740, 180, 37, 16);
+
+        lbl_Pos3.setText("jLabel3");
+        getContentPane().add(lbl_Pos3);
+        lbl_Pos3.setBounds(740, 310, 37, 16);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -207,6 +224,9 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
                     if (!thread.getFinito()) {
                         finito = false;
                         break;
+                    }
+                    else{
+                        
                     }
                 }
             }
@@ -267,6 +287,9 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
     private javax.swing.JLabel lblTitolo1;
     private javax.swing.JLabel lblTitolo2;
     private javax.swing.JLabel lblTitolo3;
+    private javax.swing.JLabel lbl_Pos1;
+    private javax.swing.JLabel lbl_Pos2;
+    private javax.swing.JLabel lbl_Pos3;
     private javax.swing.JLabel lblicona1;
     private javax.swing.JLabel lblicona2;
     private javax.swing.JLabel lblicona3;
