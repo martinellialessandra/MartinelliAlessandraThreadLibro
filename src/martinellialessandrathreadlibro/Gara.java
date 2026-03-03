@@ -9,15 +9,15 @@ import java.util.*;
  * @author Alessandra Martinell
  */
 public class Gara {
-    private ArrayList<Libro> libri;
+    private ArrayList<String> libriHorror;
 
-    public Gara(ArrayList<Libro> libri) {
-        this.libri = libri;
-        Collections.shuffle(libri);
+    public Gara(ArrayList<String> libriHorror) {
+        this.libriHorror = libriHorror;
+        Collections.shuffle(libriHorror);
     }
 
-    public ArrayList<Libro> getLibri() {
-        return libri;
+    public ArrayList<String> getLibriHorror() {
+        return libriHorror;
     }
     
     

@@ -25,7 +25,6 @@ public class ProgressBar extends Thread {
     private volatile boolean Finito;
     private volatile boolean Stop;
     private int Ritardo;
-    
     /**
      * Nel costruttore con JProgressBar ogni oggetto è collegato ad una bar differente
      * Pausa, Finito e Stop non sono attivi
