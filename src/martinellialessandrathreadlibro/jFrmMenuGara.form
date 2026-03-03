@@ -3,9 +3,6 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
-    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-      <Color blue="ff" green="cc" red="ff" type="rgb"/>
-    </Property>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -27,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace pref="282" max="32767" attributes="0"/>
+              <EmptySpace pref="283" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="rbtnDarkRomance" min="-2" max="-2" attributes="0"/>
                   <Component id="rbtnFantasy" min="-2" max="-2" attributes="0"/>
@@ -36,11 +33,8 @@
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="lblSceltaGenere" min="-2" pref="194" max="-2" attributes="0"/>
-                  <Component id="lblMenu" min="-2" pref="86" max="-2" attributes="0"/>
-              </Group>
+              <EmptySpace min="-2" pref="146" max="-2" attributes="0"/>
+              <Component id="lblMenu" min="-2" pref="86" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -50,15 +44,13 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               <Component id="lblMenu" min="-2" max="-2" attributes="0"/>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Component id="lblSceltaGenere" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
               <Component id="rbtnHorror" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="rbtnFantasy" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Component id="rbtnDarkRomance" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="72" max="32767" attributes="0"/>
+              <EmptySpace pref="76" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -66,25 +58,16 @@
   <SubComponents>
     <Component class="javax.swing.JRadioButton" name="rbtnHorror">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="12" style="3"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Horror"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtnFantasy">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="12" style="3"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="Fantasy"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="rbtnDarkRomance">
       <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="12" style="3"/>
-        </Property>
         <Property name="text" type="java.lang.String" value="DarkRomance"/>
       </Properties>
     </Component>
@@ -94,14 +77,6 @@
           <Font name="Segoe Print" size="24" style="2"/>
         </Property>
         <Property name="text" type="java.lang.String" value="MENU"/>
-      </Properties>
-    </Component>
-    <Component class="javax.swing.JLabel" name="lblSceltaGenere">
-      <Properties>
-        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI Semibold" size="14" style="2"/>
-        </Property>
-        <Property name="text" type="java.lang.String" value="Scegli il genere"/>
       </Properties>
     </Component>
   </SubComponents>

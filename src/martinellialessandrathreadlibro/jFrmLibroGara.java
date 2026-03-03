@@ -18,15 +18,51 @@ import javax.swing.JOptionPane;
  * @author martinelli.alessandr
  */
 public class jFrmLibroGara extends javax.swing.JFrame  {
-        private boolean Pausa = false;
+    private boolean Pausa = false;
     private ArrayList<ProgressBar> listaThread = new ArrayList<>();
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(jFrmLibroGara.class.getName());
 
     /**
      * Creates new form jFrmLibroGara
      */
-    public jFrmLibroGara() {
+    public jFrmLibroGara(String genere) {
         initComponents();
+        
+        // FIX: sposta le icone a sinistra, fuori dalla zona delle progress bar
+        lblicona1.setBounds(10, 20, 60, 80);
+        lblicona2.setBounds(10, 150, 60, 80);
+        lblicona3.setBounds(10, 270, 60, 90);
+        
+        // FIX: sposta i titoli vicino alle icone
+        lblTitolo1.setBounds(75, 40, 140, 40);
+        lblTitolo2.setBounds(75, 170, 140, 30);
+        lblTitolo3.setBounds(75, 290, 140, 40);
+        
+        // FIX: le progress bar iniziano dopo icone e titoli
+        pgb1.setBounds(220, 31, 520, 55);
+        pgb2.setBounds(220, 161, 520, 55);
+        pgb3.setBounds(220, 281, 520, 55);
+        
+        // FIX: porta icone e titoli in primo piano
+        getContentPane().setComponentZOrder(lblicona1, 0);
+        getContentPane().setComponentZOrder(lblicona2, 0);
+        getContentPane().setComponentZOrder(lblicona3, 0);
+        getContentPane().setComponentZOrder(lblTitolo1, 0);
+        getContentPane().setComponentZOrder(lblTitolo2, 0);
+        getContentPane().setComponentZOrder(lblTitolo3, 0);
+        
+        creaGara(genere);
+        lblTitolo1.setText(GestisciGara.getGara().getLibro1().toString());
+        lblTitolo2.setText(GestisciGara.getGara().getLibro2().toString());
+        lblTitolo3.setText(GestisciGara.getGara().getLibro3().toString());
+        
+        lblicona1.setIcon(GestisciGara.getGara().getLibro1().getIcona());
+        lblicona2.setIcon(GestisciGara.getGara().getLibro2().getIcona());
+        lblicona3.setIcon(GestisciGara.getGara().getLibro3().getIcona());
+        
+        pgb1.setForeground(GestisciGara.getGara().getLibro1().getColore());
+        pgb2.setForeground(GestisciGara.getGara().getLibro2().getColore());
+        pgb3.setForeground(GestisciGara.getGara().getLibro3().getColore());
     }
 
     /**
@@ -38,53 +74,51 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblThread1 = new javax.swing.JLabel();
-        lblThread2 = new javax.swing.JLabel();
-        lblThread3 = new javax.swing.JLabel();
+        lblicona1 = new javax.swing.JLabel();
+        lblTitolo1 = new javax.swing.JLabel();
+        lblTitolo2 = new javax.swing.JLabel();
+        lblTitolo3 = new javax.swing.JLabel();
         lblicona3 = new javax.swing.JLabel();
-        pgb1 = new javax.swing.JProgressBar();
         lblicona2 = new javax.swing.JLabel();
         pgb2 = new javax.swing.JProgressBar();
-        lblicona1 = new javax.swing.JLabel();
         pgb3 = new javax.swing.JProgressBar();
         btnAvvia = new javax.swing.JButton();
         btnPausa = new javax.swing.JButton();
         btnReset = new javax.swing.JButton();
+        pgb1 = new javax.swing.JProgressBar();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("gara");
+        setMinimumSize(new java.awt.Dimension(500, 450));
         getContentPane().setLayout(null);
 
-        lblThread1.setText("Thread 1");
-        getContentPane().add(lblThread1);
-        lblThread1.setBounds(14, 22, 45, 16);
+        lblicona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/darkRomance/libro21.png"))); // NOI18N
+        getContentPane().add(lblicona1);
+        lblicona1.setBounds(150, 20, 50, 80);
 
-        lblThread2.setText("Thread 2");
-        getContentPane().add(lblThread2);
-        lblThread2.setBounds(10, 190, 45, 16);
+        lblTitolo1.setText("Thread 1");
+        getContentPane().add(lblTitolo1);
+        lblTitolo1.setBounds(20, 50, 120, 40);
 
-        lblThread3.setText("Thread 3");
-        getContentPane().add(lblThread3);
-        lblThread3.setBounds(10, 310, 45, 16);
+        lblTitolo2.setText("Thread 2");
+        getContentPane().add(lblTitolo2);
+        lblTitolo2.setBounds(20, 190, 120, 30);
 
-        lblicona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Immagini/DarkRomance/libro21 (2).png"))); // NOI18N
+        lblTitolo3.setText("Thread 3");
+        getContentPane().add(lblTitolo3);
+        lblTitolo3.setBounds(20, 310, 120, 40);
+
+        lblicona3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/darkRomance/libro22.png"))); // NOI18N
         getContentPane().add(lblicona3);
-        lblicona3.setBounds(150, 20, 50, 80);
+        lblicona3.setBounds(150, 270, 80, 90);
 
-        pgb1.setForeground(new java.awt.Color(0, 0, 204));
-        getContentPane().add(pgb1);
-        pgb1.setBounds(157, 31, 567, 55);
-
-        lblicona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Immagini/DarkRomance/libro22.png"))); // NOI18N
+        lblicona2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/darkRomance/libro24.png"))); // NOI18N
         getContentPane().add(lblicona2);
-        lblicona2.setBounds(150, 150, 93, 80);
+        lblicona2.setBounds(150, 150, 50, 80);
 
         pgb2.setForeground(new java.awt.Color(255, 0, 153));
         getContentPane().add(pgb2);
         pgb2.setBounds(154, 164, 570, 55);
-
-        lblicona1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Immagini/DarkRomance/libro24.png"))); // NOI18N
-        getContentPane().add(lblicona1);
-        lblicona1.setBounds(150, 280, 51, 80);
 
         pgb3.setForeground(new java.awt.Color(0, 204, 0));
         getContentPane().add(pgb3);
@@ -106,7 +140,7 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
             }
         });
         getContentPane().add(btnPausa);
-        btnPausa.setBounds(310, 500, 72, 23);
+        btnPausa.setBounds(320, 490, 72, 23);
 
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
@@ -117,16 +151,20 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
         getContentPane().add(btnReset);
         btnReset.setBounds(520, 450, 72, 23);
 
+        pgb1.setForeground(new java.awt.Color(0, 0, 204));
+        getContentPane().add(pgb1);
+        pgb1.setBounds(157, 31, 570, 55);
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
     /**
      * Mi serve per mettere in pausa i thread se sono in esecuzione
      * Lo utilizzo per riavviare i thread se sono in pausa
      * @param evt 
      */
     private void btnPausaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPausaActionPerformed
-        // TODO add your handling code here:
-             if(Pausa){
+        if(Pausa){
             for(int i = 0; i < 3; i++){
                 listaThread.get(i).riprendi();
             }  
@@ -141,6 +179,7 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
             btnPausa.setText("riprendi");
         }
     }//GEN-LAST:event_btnPausaActionPerformed
+
     /**
      * Quando si clicca sul bottone Avvia, questo viene disabilitato
      * Mi si creano i 3 thread e ognuno ha una progress bar
@@ -150,31 +189,23 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
      * @param evt 
      */
     private void btnAvviaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAvviaActionPerformed
-        // TODO add your handling code here:
-                 btnAvvia.setEnabled(false);
+        btnAvvia.setEnabled(false);
         btnPausa.setEnabled(true);
-        //creazione thread
-        listaThread.add(new ProgressBar(pgb1));
-        listaThread.add(new ProgressBar(pgb2));
-        listaThread.add(new ProgressBar(pgb3));
-        for(int i = 0; i < 3; i++){
-            listaThread.get(i).start();
-        }
+        GestisciGara.getGara().avvia();
         Thread t = new Thread(() -> {
-            boolean finito = false;
-            while (!finito) {
-            finito = true;
-                for (ProgressBar thread : listaThread) {
-                    if (!thread.getFinito()) {
-                        finito = false;
-                        break;
-                    }
+           while (!GestisciGara.getGara().isFinito()){
+              try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    e.getMessage();
                 }
-            }
-            JOptionPane.showMessageDialog(this, "Thread terminati!");
+           }
+           JOptionPane.showMessageDialog(this, "Il vincitore è " + GestisciGara.getGara().getVincitore().getTitolo());
+           btnAvvia.setEnabled(true);
         });
         t.start();
     }//GEN-LAST:event_btnAvviaActionPerformed
+
     /**
      * Quando si preme Reset i pulsanti vengono riportati allo stato iniziale
      * Ferma tutti i thread
@@ -183,8 +214,7 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
      * @param evt 
      */
     private void btnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResetActionPerformed
-        // TODO add your handling code here:
-          btnAvvia.setEnabled(true);
+        btnAvvia.setEnabled(true);
         btnPausa.setEnabled(false);
         btnPausa.setText("pausa");
         for(int i = 0; i < 3; i++){
@@ -193,15 +223,22 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
         listaThread.removeAll(listaThread);
     }//GEN-LAST:event_btnResetActionPerformed
 
+    public void creaGara(String genere){
+        if ("Horror".equals(genere)) {
+            GestisciGara.nuovaGaraHorror(pgb1, pgb2, pgb3);
+        }
+        else if ("Fantasy".equals(genere)) {
+            GestisciGara.nuovaGaraFantasy(pgb1, pgb2, pgb3);
+        }
+        else if ("DarkRomance".equals(genere)){
+            GestisciGara.nuovaGaraDarkRomance(pgb1, pgb2, pgb3);
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -212,19 +249,15 @@ public class jFrmLibroGara extends javax.swing.JFrame  {
         } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
             logger.log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new jFrmLibroGara().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAvvia;
     private javax.swing.JButton btnPausa;
     private javax.swing.JButton btnReset;
-    private javax.swing.JLabel lblThread1;
-    private javax.swing.JLabel lblThread2;
-    private javax.swing.JLabel lblThread3;
+    private javax.swing.JLabel lblTitolo1;
+    private javax.swing.JLabel lblTitolo2;
+    private javax.swing.JLabel lblTitolo3;
     private javax.swing.JLabel lblicona1;
     private javax.swing.JLabel lblicona2;
     private javax.swing.JLabel lblicona3;

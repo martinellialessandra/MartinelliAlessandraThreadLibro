@@ -32,42 +32,32 @@ public class jFrmMenuGara extends javax.swing.JFrame {
         rbtnFantasy = new javax.swing.JRadioButton();
         rbtnDarkRomance = new javax.swing.JRadioButton();
         lblMenu = new javax.swing.JLabel();
-        lblSceltaGenere = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(255, 204, 255));
 
-        rbtnHorror.setFont(new java.awt.Font("Segoe UI Semibold", 3, 12)); // NOI18N
         rbtnHorror.setText("Horror");
 
-        rbtnFantasy.setFont(new java.awt.Font("Segoe UI Semibold", 3, 12)); // NOI18N
         rbtnFantasy.setText("Fantasy");
 
-        rbtnDarkRomance.setFont(new java.awt.Font("Segoe UI Semibold", 3, 12)); // NOI18N
         rbtnDarkRomance.setText("DarkRomance");
 
         lblMenu.setFont(new java.awt.Font("Segoe Print", 2, 24)); // NOI18N
         lblMenu.setText("MENU");
-
-        lblSceltaGenere.setFont(new java.awt.Font("Segoe UI Semibold", 2, 14)); // NOI18N
-        lblSceltaGenere.setText("Scegli il genere");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(282, Short.MAX_VALUE)
+                .addContainerGap(283, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(rbtnDarkRomance)
                     .addComponent(rbtnFantasy)
                     .addComponent(rbtnHorror))
                 .addGap(21, 21, 21))
             .addGroup(layout.createSequentialGroup()
-                .addGap(38, 38, 38)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(lblSceltaGenere, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(146, 146, 146)
+                .addComponent(lblMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -75,15 +65,13 @@ public class jFrmMenuGara extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(lblMenu)
-                .addGap(18, 18, 18)
-                .addComponent(lblSceltaGenere)
-                .addGap(33, 33, 33)
+                .addGap(67, 67, 67)
                 .addComponent(rbtnHorror)
                 .addGap(18, 18, 18)
                 .addComponent(rbtnFantasy)
                 .addGap(18, 18, 18)
                 .addComponent(rbtnDarkRomance)
-                .addContainerGap(72, Short.MAX_VALUE))
+                .addContainerGap(76, Short.MAX_VALUE))
         );
 
         pack();
@@ -116,7 +104,6 @@ public class jFrmMenuGara extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel lblMenu;
-    private javax.swing.JLabel lblSceltaGenere;
     private javax.swing.JRadioButton rbtnDarkRomance;
     private javax.swing.JRadioButton rbtnFantasy;
     private javax.swing.JRadioButton rbtnHorror;
